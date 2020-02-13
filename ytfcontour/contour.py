@@ -23,10 +23,10 @@ class Contour():
         v, inv = np.unique(lines_sorted,axis=0,return_inverse=True)
         self._vertices = np.zeros(v.shape[0],dtype=VERTEX_DTYPE)
         self._vertices['position'] = v
-        self._vertices['segment'] = np.arange(lines.shape[0])
+        self._vertices['segment'] = np.arange(v.shape[0])
         
         # Set up the line segments
-        self._segments=np.zeros(lines.shape[0],dtype=SEGMENT_DTYPE)
+        self._segments=np.zeros(v.shape[0],dtype=SEGMENT_DTYPE)
         self._segments['v0'] = inv[::2]
         self._segments['v1'] = inv[1::2]
         
