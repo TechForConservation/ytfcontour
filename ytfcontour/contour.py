@@ -26,7 +26,7 @@ class Contour():
         self._vertices['segment'] = np.arange(v.shape[0])
         
         # Set up the line segments
-        self._segments=np.zeros(v.shape[0],dtype=SEGMENT_DTYPE)
+        self._segments=np.zeros(lines.shape[0],dtype=SEGMENT_DTYPE)
         self._segments['v0'] = inv[::2]
         self._segments['v1'] = inv[1::2]
         
